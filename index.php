@@ -1,49 +1,43 @@
 <?php
 /*
-Author: Javed Ur Rehman
 Author: Kelly Zhang
-Website: http://www.allphptricks.com/
 */
-include("header.php"); 
-include("auth.php"); //include auth.php file on all secure pages ?>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Welcome Home</title>
-<link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-<div class="form">
-<p>Welcome <?php echo $_SESSION['username']; ?>!</p>
-<p>This is secure area.</p>
-<p><a href="dashboard.php">Dashboard</a></p>
-<a href="logout.php">Logout</a>
+$title = 'Home';
+include("/layout/header.php"); ?>
 
+<canvas id="homebg"></canvas>
 
-<p>Click the button to get your coordinates.</p>
+<div class  = "jumbotron text-center">
+	<h1 id  = "title">Pet Friends</h1>
+	<h4 id = 'Tagline'>Tagline</h4>
+	<a href="login.php" class="btn btn-primary showcase-seq" role="button" id = "login">Login</a>
+	<a href="registration.php" class="btn btn-primary showcase-seq" role="button" id = "signup">Sign Up!</a>
+</div>
 
-<button onclick="getLocation()">Try It</button>
-
-<p id="demo"></p>
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bubbly-bg@0.2.3/dist/bubbly-bg.js"></script>
 <script>
-var x = document.getElementById("demo");
+	bubbly({canvas: document.getElementById("homebg")});
+  	bubbly({
+	    colorStart: "#fff4e6",
+	    colorStop: "#ffe9e4",
+	    blur: 1,
+	    compose: "source-over",
+	    bubbleFunc: () => `hsla(${Math.random() * 50}, 100%, 50%, .3)`
+	});
 
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
+	$(document).ready(function(){
+	    var logo = document.getElementById("title");
+	    var tagline  = document.getElementById("tagline");
+	    var one = document.getElementById("login");
+	    var two = document.getElementById("signup");
+	    TweenLite.to(logo, 1, {left:"632px"});
+	    TweenLite.to(logo, 1, {left:"632px", delay = 1});
+	    TweenMax.staggerTo([one, two], 1, {left:"632px", delay  = 3});
+	}
 
-function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;
-}
 </script>
 
+
 <?php
-	include("footer.php"); 
+	include("/layout/footer.php"); 
 ?> 

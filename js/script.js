@@ -1,8 +1,9 @@
 $(document).ready(function(){
+
 //scroll reveal
   window.sr = ScrollReveal({ reset: true });
   btnContainer = document.getElementById("buttons");
-  demoContainer = document.getElementById("demo");
+  heroContainer = document.getElementById("hero");
 
   sr.reveal('.showcase', { duration: 2000 });
   sr.reveal('.showcase-left-top', {duration: 2000, origin:'left'});
@@ -27,4 +28,7 @@ $(document).ready(function(){
       });
     } 
   });
+
+
+});
 

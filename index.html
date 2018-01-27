@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!---meta-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale = 1">
+
+    <title>Pet Friends</title>
+
+    <link rel="icon" href="./images/icon.png">
+    <!--bootstrap-->
+
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel='stylesheet' type='text/css' href='style.css'/>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script src  = "js/script.js"></script>
+   
+
+</head>
+<body>
+
+<canvas id="homebg">	
+</canvas>
+<div class  = "jumbotron text-center" id = 'hero'>
+	<h1 class  = 'showcase' id  = "title">Pet Friends</h1>
+	<h4 class  = 'showcase' id = 'Tagline'>We care for you</h4>
+	<a href="login.php" class="btn btn-primary showcase-seq" role="button" id = "login">Login</a>
+	<a href="registration.php" class="btn btn-primary showcase-seq" role="button" id = "signup">Sign Up!</a>
+</div>
+
+<!--tweeninggg and other animations -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bubbly-bg@0.2.3/dist/bubbly-bg.js"></script>
+<script>
+		//bubbly({canvas: document.getElementById("homebg")});
+	  	bubbly({
+		    colorStart: "#fff4e6",
+		    colorStop: "#ffe9e4",
+		    blur: 1,
+		    compose: "source-over",
+		    bubbleFunc: () => `hsla(${Math.random() * 50}, 100%, 50%, .3)`
+		});
+</script>
+</body>
+</html>
