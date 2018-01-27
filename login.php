@@ -35,15 +35,25 @@ Website: http://www.allphptricks.com/
 				}
     }else{
 ?>
-<div class="form">
-<h1>Log In</h1>
-<form action="" method="post" name="login">
-<input type="text" name="username" placeholder="Username" required />
-<input type="password" name="password" placeholder="Password" required />
-<input name="submit" type="submit" value="Login" />
-</form>
-<p>Not registered yet? <a href='registration.php'>Register Here</a></p>
+<div class= "container-fluid" id = "logreg">
+<div class = 'row' >
 
+	<div class  = "col-4">
+	</div>
+
+	<div class  = "col-6">
+		<div class="form">
+		<h1 id  = 'logo'>mi.</h1>
+		<form action="" method="post" name="login">
+		<input type="text" name="username" placeholder="Username" required />
+		<input type="password" name="password" placeholder="Password" required />
+		<input name="submit" type="submit" value="Login" />
+		</form>
+		<p>Not registered yet? <a href='registration.php'>Register Here</a>|<a href='index.html'>Home</a></p>
+		</div>
+	</div>
+
+</div>
 </div>
 <?php } ?>
 

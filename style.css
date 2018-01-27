@@ -32,7 +32,7 @@ input[type='submit']:hover {background-color: #024978;}
 	font-family: 'Lato', sans-serif;
 }
 
-#hero h1{
+#logo{
 	font-family: 'Indie Flower', cursive,bold;
 }
 
@@ -50,4 +50,15 @@ input[type='submit']:hover {background-color: #024978;}
 .btn-primary:hover{
 	background-color: #b1cbbb;
 	border-color: transparent;
+}
+
+a{
+	color:#f7786b;
+}
+
+#logreg{
+	background-color: #f2f2f2
+	width: 100%;
+	height: 100%;
+
 }
