@@ -30,7 +30,7 @@ def signup():
         return jsonify({'signup': 'fail'}), 201
 
 @app.route('/journal', methods=['POST'])
-def saveJounal():
+def saveJournal():
 
     text = request.json['text']
     """
