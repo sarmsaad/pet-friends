@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width-device-width, initial-scale = 1">
 
-    <title>Kelly Zhang</title>
+    <title><?php if(isset($title)){ echo $title; }?></title>
 
     <link rel="icon" href="./images/icon.png">
     <!--bootstrap-->
