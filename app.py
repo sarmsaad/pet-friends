@@ -1,5 +1,7 @@
 from flask import Flask, request, abort, jsonify, Response
 
+import config
+
 import requests
 
 url = "https://language.googleapis.com/v1/documents:analyzeSentiment?key=" + config.GAPI
@@ -56,11 +58,11 @@ def saveJournal():
         time.sleep(1)
         return None
 
-def authenticate(request):
-    #the function to authenticate the login
-
-def storedata(request):
-    #the function that's going to store the new patient
+# def authenticate(request):
+#     #the function to authenticate the login
+#
+# def storedata(request):
+#     #the function that's going to store the new patient
 
 if __name__ == '__main__':
     app.run(debug=True)
