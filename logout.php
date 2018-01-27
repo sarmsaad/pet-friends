@@ -1,9 +1,12 @@
-<?php require('includes/config.php');
+<?php
+/*
+Author: Javed Ur Rehman
+Website: http://www.allphptricks.com/
+*/
 
-//logout
-$user->logout(); 
-
-//logged in return to index page
-header('Location: index.php');
-exit;
+session_start();
+if(session_destroy()) // Destroying All Sessions
+{
+header("Location: login.php"); // Redirecting To Home Page
+}
 ?>
