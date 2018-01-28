@@ -2,6 +2,8 @@ from flask import Flask, request, abort, jsonify, Response
 
 from pymongo import MongoClient
 
+import numpy as np
+
 import config
 
 import requests
@@ -70,8 +72,18 @@ def saveJournal():
         var = posts.find_one({"username": username})
         arr_score = str(var["score"]) + ',' + str(score)
         arr_magnitude = str(var["magnitude"]) + ',' + str(magnitude)
+        arr_today = str(score) + ',' + str(mangitude)
+        #calculate the progress of the last 5 days and see if there's improvement
+        array = arr_score.split(',')
+        if len(array) > 5:
+            array = array[len(arr)-6:]
+            mean = np.mean(array)
+            std = np.std(array)
+
+
+
         posts.update_one(var, {
-            "$set": {"score": arr_score, "magnitude": arr_magnitude}})
+            "$set": {"score": arr_score, "magnitude": arr_magnitude, "today":arr_today, "progress": }})
         return jsonify({'reading': 'successful'})
     elif r.status_code == 429:
         return jsonify({'reading': 'bad'})
