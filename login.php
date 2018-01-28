@@ -7,9 +7,26 @@ Website: http://www.allphptricks.com/
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Login</title>
-<link rel="stylesheet" href="css/style.css" />
+	<!---meta-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale = 1">
+
+    <title>Login</title>
+
+    <link rel="icon" href="./images/icon.png">
+    <!--bootstrap-->
+
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel='stylesheet' type='text/css' href='style.css'/>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script src  = "js/script.js"></script>
+   
 </head>
 <body>
 <?php
@@ -25,7 +42,7 @@ Website: http://www.allphptricks.com/
 	//Checking is user existing in the database or not
 
     //send a request
-    $url = 'http://127.0.0.1:5000/login?username=' . $username . '&password=' . $password;
+    $url = 'http://127.0.0.1:5000/journal?' . $username . '&password=' . $password;
     $json = @file_get_contents($url);
     $obj = json_decode($json);
     $bool = $obj->{'login'};
@@ -41,11 +58,11 @@ Website: http://www.allphptricks.com/
             <div class= "container-fluid" id = "logreg">
 				<div class = 'row' >
 
-					<div class  = "col">
+					<div class  = "col-4">
 						<img src="dog.png" class="img-responsive" alt="dog" style="float:left">
 					</div>
 
-					<div class  = "col">
+					<div class  = "col-6">
 						<div class="form" id = "reg">
 						<h1 id  = 'logo'>mi.</h1>
 						<form action="" method="post" name="login">
