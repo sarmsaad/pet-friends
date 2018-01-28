@@ -58,7 +58,7 @@ Website: http://www.allphptricks.com/
             <div class= "container-fluid" id = "logreg">
 				<div class = 'row' >
 
-					<div class  = "col-4">
+					<div class  = "col-4" id  = "dog">
 						<img src="dog.png" class="img-responsive" alt="dog" style="float:left">
 					</div>
 
@@ -71,7 +71,7 @@ Website: http://www.allphptricks.com/
 						<div class  = 'row'>
 							<input type="password" name="password" placeholder="Password" required />
 						</div>
-						<input class = 'btn btn-primary' name="submit" type="submit" value="Login" />
+						<input class = 'btn btn-primary' name="submit" type="submit" value="Login" id="regg" />
 						</form>
 						<p>Not registered yet? <a href='registration.php'>Register Here</a> | <a href='index.html'>Home</a></p>
 						</div>

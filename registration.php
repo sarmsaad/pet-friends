@@ -54,18 +54,26 @@ Website: http://www.allphptricks.com/
 <div class= "container-fluid" id = "logreg">
 <div class = 'row' >
 
-	<div class  = "col-4">
-		<img src="dog.png" class="img-responsive" alt="dog" style = "float: left">
+	<div class  = "col-4" id  = "dog">
+		<img src="dog1.png" class="img-responsive" alt="dog" style = "float: left">
 	</div>
 
 	<div class  = "col-6">
 		<div class="form" id = "reg">
 		<h1 id = 'logo'>mi.</h1>
 		<form name="registration" action="" method="post">
-		<input type="text" name="username" placeholder="Username" required />
-		<input type="email" name="email" placeholder="Email" required />
+        <div class  = "row">
+		  <input type="text" name="username" placeholder="Username" required /></div>
+        <div class  = "row">
+		  <input type="email" name="email" placeholder="Email" required />
+        </div>
+        <div class = "row">
 		<input type="password" name="password" placeholder="Password" required />
-		<input type="submit" name="submit" value="Register" />
+        </div>
+        <div class = "row">
+        <input type="location" name="location" placeholder="location" required />
+        </div>
+		<input class = 'btn btn-primary' type="submit" name="submit" value="Register" id = "regg"/>
 		</form>
 		<p>Already a member? <a href='login.php'>Login Here</a>|<a href='index.html'>Home</a></p>
 		</div>

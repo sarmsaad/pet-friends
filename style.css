@@ -4,13 +4,17 @@ Website: http://www.allphptricks.com/
 */
 
 #logreg{
-	padding-top: 500px;
+	padding-top: 50px;
 }
 
 #reg{
 	padding-left: 20px;
 	padding-top: 20px;
 	float: left;
+}
+
+#dog{
+	padding-left: 50px;
 }
 
 #homebg {
@@ -20,6 +24,10 @@ Website: http://www.allphptricks.com/
   background-position: 50% 50%;
   z-index: -100;
 
+}
+
+#regg{
+ margin-left: 0px;
 }
 
 #hero{
