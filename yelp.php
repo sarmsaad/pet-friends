@@ -20,13 +20,15 @@
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <script src  = "js/script.js"></script>
-   
 
 </head>
 <body>
 
 <?php
-  $the_username = $_SESSION['username'] 
+  $the_username = $_SESSION['username']
+  $url = 'http://127.0.0.1:5000/show?username=' . $the_username;
+  $json = @file_get_contents($url);
+  echo $json
 ?>
     
   

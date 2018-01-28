@@ -92,6 +92,22 @@ $('#journal').on('show.bs.modal', function (event) {
     var name = document.getElementsByName("user")[0].value; // 
     var journal = document.getElementsByName("writing")[0].value;
     var date = document.getElementsByName("date")[0].value; // Extract info from data-* attributes
+    var username = "<?php echo $the_username ?>";
+    var HttpClient = function() {
+          this.get = function(aUrl, aCallback) {
+              var anHttpRequest = new XMLHttpRequest();
+              anHttpRequest.onreadystatechange = function() {
+                  if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                      aCallback(anHttpRequest.responseText);
+              };
+              anHttpRequest.open( "GET", aUrl, true );
+              anHttpRequest.send( null );
+          };
+        };
+        var client = new HttpClient();
+        client.get("http://127.0.0.1:5000/journal?username=" + username + "&text=" + journal, function(response){
+            //do nothing
+        });
 }
 
 })
