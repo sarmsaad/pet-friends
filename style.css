@@ -12,7 +12,8 @@ Website: http://www.allphptricks.com/
 }
 
 #journal{
-	width:25%;
+	width:50%;
+	text-align: center;
 }
 
 #dog{
@@ -39,7 +40,7 @@ button {
 
 #close-image img {
     display: block;
-    height: 30px;  
+    height: 50px;  
     width: 100px;
 }
 

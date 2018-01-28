@@ -38,7 +38,7 @@
 </nav>
 
 <div class  = "row">
-  <div class  = "col-md-2">
+  <div class  = "col-md-4">
     <button id="close-image" onclick='eatMode()'><img src="FeedButton.png"></button>
   </div>
 
@@ -51,7 +51,7 @@
 
 
 
-  <div class  = "col-md-6">
+  <div class  = "col-md-4">
     <h1>My Journal</h1>
     <form id = 'journal'>
       <div class="form-group">
