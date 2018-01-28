@@ -64,8 +64,10 @@
       </div>
       <div class="form-group">
           <label for="message-text" class="form-control-label">Your thoughts:</label>
-          <textarea class="form-control" id="message-text"></textarea>
+          <textarea class="form-control" id="message-text" name = "writing"></textarea>
           </div>
+          <label for="date">Signature</label>
+            <input type="text" class="form-control" name="user">
     </form>
     <div id  = "fromm">
       <button type="button" class="btn" id  = "formbtn">Finished!</button>
@@ -83,13 +85,10 @@
 
 <script>
 $('#journal').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) // Button that triggered the modal
-  var recipient = button.data('whatever') // Extract info from data-* attributes
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-  var modal = $(this)
-  modal.find('.modal-title').text('New message to ' + recipient)
-  modal.find('.modal-body input').val(recipient)
+  var name = document.getElementsByName("user")[0].value; // 
+  var journal = document.getElementsByName("writing")[0].value;
+  var date = document.getElementsByName("date")[0].value; // Extract info from data-* attributes
+
 })
 
 // Img Window
