@@ -26,7 +26,7 @@
 <body>
     
     <audio controls>
-		<source src="Beautiful_and_Relaxing_Piano_Music.mp4" type="audio/mp4">
+		<source src="Beautiful_and_Relaxing_Piano_Music.mp3" type="audio/mp3">
 	Your browser does not support the audio element.
 	</audio>
     
