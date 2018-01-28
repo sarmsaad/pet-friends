@@ -60,14 +60,14 @@
     <form id = 'journal'>
       <div class="form-group">
           <label for="date">Today's Date</label>
-            <input type="datetime-local" class="form-control" name="date">
+            <input type="datetime-local" class="form-control" name="date" onkeyup="formChanged()" onchange="formChanged()">
       </div>
       <div class="form-group">
           <label for="message-text" class="form-control-label">Your thoughts:</label>
-          <textarea class="form-control" id="message-text" name = "writing"></textarea>
+          <textarea class="form-control" id="message-text" name = "writing" onkeyup="formChanged()" onchange="formChanged()"></textarea>
           </div>
           <label for="date">Signature</label>
-            <input type="text" class="form-control" name="user">
+            <input type="text" class="form-control" name="user" onkeyup="formChanged()" onchange="formChanged()">
     </form>
     <div id  = "fromm">
       <button type="button" class="btn" id  = "formbtn">Finished!</button>
@@ -85,9 +85,11 @@
 
 <script>
 $('#journal').on('show.bs.modal', function (event) {
-  var name = document.getElementsByName("user")[0].value; // 
-  var journal = document.getElementsByName("writing")[0].value;
-  var date = document.getElementsByName("date")[0].value; // Extract info from data-* attributes
+  function formChanged() {
+    var name = document.getElementsByName("user")[0].value; // 
+    var journal = document.getElementsByName("writing")[0].value;
+    var date = document.getElementsByName("date")[0].value; // Extract info from data-* attributes
+}
 
 })
 
