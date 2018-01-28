@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width-device-width, initial-scale = 1">
 
-    <title>Pet Friends</title>
+    <title>Mindfuk</title>
 
     <link rel="icon" href="./images/icon.png">
     <!--bootstrap-->
@@ -33,7 +33,7 @@
 <nav class="navbar navbar-light bg-faded">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand">mi.</a>
+      <a class="navbar-brand">Mindful</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li><a href = "#">Home</a></li>
