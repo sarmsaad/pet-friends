@@ -25,10 +25,7 @@
 </head>
 <body>
     
-    <audio controls>
-		<source src="Beautiful_and_Relaxing_Piano_Music.mp3" type="audio/mp3">
-	Your browser does not support the audio element.
-	</audio>
+  
     
 <nav class="navbar navbar-light bg-faded">
   <div class="container-fluid">
@@ -44,7 +41,8 @@
 </nav>
 
 <div class  = "row">
-  <div class  = "col-md-4">
+  <div class  = "col-md-2" id  = "righttbar">
+    <img src = "foodCounter.png" id = "count">
     <button id="close-image" onclick='eatMode()'><img src="FeedButton.png"></button>
   </div>
 
@@ -57,7 +55,7 @@
 
 
 
-  <div class  = "col-md-4">
+  <div class  = "col-md-6">
     <h1>My Journal</h1>
     <form id = 'journal'>
       <div class="form-group">
@@ -69,7 +67,12 @@
           <textarea class="form-control" id="message-text"></textarea>
           </div>
     </form>
-    <button type="button" class="btn btn-primary">Finished!</button>
+    <div id  = "fromm">
+      <button type="button" class="btn" id  = "formbtn">Finished!</button>
+      <audio controls>
+      <source src="Beautiful_and_Relaxing_Piano_Music.mp3" type="audio/mp3">
+      </audio>
+    </div>
   </div>
 </div>
 
