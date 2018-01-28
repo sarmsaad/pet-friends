@@ -1,5 +1,4 @@
 from flask import Flask, request, abort, jsonify, Response
-import config
 
 from pymongo import MongoClient
 
@@ -64,12 +63,6 @@ def saveJournal():
     print(r)
     if r.status_code == 200:
         read = r.json()
-<<<<<<< HEAD
-        return read
-    #elif r.status_code == 429:
-     #   time.sleep(1)
-      #  return None
-=======
         print(read)
         score = read["documentSentiment"]["score"]
         magnitude = read["documentSentiment"]["magnitude"]
@@ -81,17 +74,9 @@ def saveJournal():
         return jsonify({'reading': 'successful'})
     elif r.status_code == 429:
         return jsonify({'reading': 'bad'})
->>>>>>> 664c236f24abc4f2346b7343df2a50d0b8795e0f
 
 def authenticate(username, password):
     #the function to authenticate the login
-<<<<<<< HEAD
-    pass
-
-def storedata(request):
-    #the function that's going to store the new patient
-    pass
-=======
     var = posts.find_one({"username": username})
     print(var)
     if var == None:
@@ -116,7 +101,6 @@ def storedata(request):
         return True
     else:
         return False
->>>>>>> 664c236f24abc4f2346b7343df2a50d0b8795e0f
 
 if __name__ == '__main__':
     app.run(debug=True)
