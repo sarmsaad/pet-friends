@@ -42,7 +42,7 @@ Website: http://www.allphptricks.com/
 	//Checking is user existing in the database or not
 
     //send a request
-    $url = 'http://127.0.0.1:5000/journal?username=' . $username . '&password=' . $password;
+    $url = 'http://127.0.0.1:5000/signup?username=' . $username . '&password=' . $password;
     $json = @file_get_contents($url);
     $obj = json_decode($json);
     $bool = $obj->{'login'};
