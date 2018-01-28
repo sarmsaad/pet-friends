@@ -2,7 +2,9 @@
 Author: Javed Ur Rehman
 Website: http://www.allphptricks.com/
 */
-
+body{
+	overflow-x: hidden;
+}
 #logreg{
 	padding-top: 50px;
 }
@@ -12,8 +14,10 @@ Website: http://www.allphptricks.com/
 }
 
 #journal{
-	width:50%;
+	width:80%;
 	text-align: center;
+	margin-right: 20px;
+	float: right;
 }
 
 #dog{
@@ -28,8 +32,14 @@ Website: http://www.allphptricks.com/
   z-index: -100;
 
 }
+#canvas{
+	float:left;
+	padding: 0px;
+	margin-right: 20px;
+}
 
 button {
+	margin-top: 20px;
     display: inline-block;
     height: 50px;
     padding: 0;
@@ -44,6 +54,26 @@ button {
     width: 100px;
 }
 
+#count{
+	width:70%;
+	float:center;
+	height: auto;
+}
+
+#fromm{
+float: right;
+padding-right: 15px;
+
+}
+
+#righttbar{
+	float:center;
+
+}
+
+#formbtn{
+	 float: right;
+}
 
 #regg{
  margin-left: 0px;

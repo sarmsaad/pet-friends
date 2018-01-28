@@ -25,10 +25,7 @@
 </head>
 <body>
     
-    <audio controls>
-		<source src="Beautiful_and_Relaxing_Piano_Music.mp3" type="audio/mp3">
-	Your browser does not support the audio element.
-	</audio>
+  
     
 <nav class="navbar navbar-light bg-faded">
   <div class="container-fluid">
@@ -44,7 +41,8 @@
 </nav>
 
 <div class  = "row">
-  <div class  = "col-md-4">
+  <div class  = "col-md-2" id  = "righttbar">
+    <img src = "foodCounter.png" id = "count">
     <button id="close-image" onclick='eatMode()'><img src="FeedButton.png"></button>
   </div>
 
@@ -57,19 +55,26 @@
 
 
 
-  <div class  = "col-md-4">
+  <div class  = "col-md-6">
     <h1>My Journal</h1>
     <form id = 'journal'>
       <div class="form-group">
           <label for="date">Today's Date</label>
-            <input type="datetime-local" class="form-control" name="date">
+            <input type="datetime-local" class="form-control" name="date" onkeyup="formChanged()" onchange="formChanged()">
       </div>
       <div class="form-group">
           <label for="message-text" class="form-control-label">Your thoughts:</label>
-          <textarea class="form-control" id="message-text"></textarea>
+          <textarea class="form-control" id="message-text" name = "writing" onkeyup="formChanged()" onchange="formChanged()"></textarea>
           </div>
+          <label for="date">Signature (username)</label>
+            <input type="text" class="form-control" name="user" onkeyup="formChanged()" onchange="formChanged()">
     </form>
-    <button type="button" class="btn btn-primary">Finished!</button>
+    <div id  = "fromm">
+      <button type="button" class="btn" id  = "formbtn">Finished!</button>
+      <audio controls>
+      <source src="Beautiful_and_Relaxing_Piano_Music.mp3" type="audio/mp3">
+      </audio>
+    </div>
   </div>
 </div>
 
@@ -80,13 +85,12 @@
 
 <script>
 $('#journal').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) // Button that triggered the modal
-  var recipient = button.data('whatever') // Extract info from data-* attributes
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-  var modal = $(this)
-  modal.find('.modal-title').text('New message to ' + recipient)
-  modal.find('.modal-body input').val(recipient)
+  function formChanged() {
+    var name = document.getElementsByName("user")[0].value; // 
+    var journal = document.getElementsByName("writing")[0].value;
+    var date = document.getElementsByName("date")[0].value; // Extract info from data-* attributes
+}
+
 })
 
 // Img Window
