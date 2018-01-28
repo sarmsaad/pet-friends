@@ -26,6 +26,7 @@ def login():
     #still take care of bad requests
     username = request.args.get("username")
     password = request.args.get("password")
+    print(username)
     if authenticate(username, password):
         return jsonify({'login': 'successful'}), 201
     else:

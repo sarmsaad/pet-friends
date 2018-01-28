@@ -14,7 +14,6 @@ Website: http://www.allphptricks.com/
 </head>
 <body>
 <?php
-	require('db.php');
     // If form submitted, insert values into the database.
     if (isset($_REQUEST['username'])){
 		$username = ($_REQUEST['username']); // removes backslashes
