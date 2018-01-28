@@ -49,7 +49,7 @@ Website: http://www.allphptricks.com/
 
         if($bool == "successful"){
 			$_SESSION['username'] = $username;
-			header("Location: index.php"); // Redirect user to index.php
+			header("Location: member.php"); // Redirect user to index.php
             }else{
 				echo "<div class='form'><h3>Username/password is incorrect.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
 				}
@@ -63,14 +63,17 @@ Website: http://www.allphptricks.com/
 					</div>
 
 					<div class  = "col-6">
-						<div class="form" id = "reg">
+						<div class="form-group" id = "reg">
 						<h1 id  = 'logo'>mi.</h1>
 						<form action="" method="post" name="login">
-						<input type="text" name="username" placeholder="Username" required />
-						<input type="password" name="password" placeholder="Password" required />
-						<input name="submit" type="submit" value="Login" />
+						<div class  = 'row'>
+							<input type="text" name="username" placeholder="Username" required /></div>
+						<div class  = 'row'>
+							<input type="password" name="password" placeholder="Password" required />
+						</div>
+						<input class = 'btn btn-primary' name="submit" type="submit" value="Login" />
 						</form>
-						<p>Not registered yet? <a href='registration.php'>Register Here</a>|<a href='index.html'>Home</a></p>
+						<p>Not registered yet? <a href='registration.php'>Register Here</a> | <a href='index.html'>Home</a></p>
 						</div>
 					</div>
 

@@ -3,6 +3,9 @@ Author: Javed Ur Rehman
 Website: http://www.allphptricks.com/
 */
 
+#logreg{
+	padding-top: 500px;
+}
 
 #reg{
 	padding-left: 20px;
@@ -39,7 +42,7 @@ h1{
 
 .btn-primary{
 	margin: 10px 10px 10px 10px;
-	padding: 10px 15px 10px 15px;
+	padding: 5px 15px 5px 15px;
 	background-color: #80ced6;
 	border-color: transparent;
 }
