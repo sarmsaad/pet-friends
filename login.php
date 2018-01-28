@@ -41,11 +41,12 @@ Website: http://www.allphptricks.com/
             <div class= "container-fluid" id = "logreg">
 				<div class = 'row' >
 
-					<div class  = "col-4">
+					<div class  = "col">
+						<img src="dog.png" class="img-responsive" alt="dog" style="float:left">
 					</div>
 
-					<div class  = "col-6">
-						<div class="form">
+					<div class  = "col">
+						<div class="form" id = "reg">
 						<h1 id  = 'logo'>mi.</h1>
 						<form action="" method="post" name="login">
 						<input type="text" name="username" placeholder="Username" required />
