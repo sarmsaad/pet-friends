@@ -102,8 +102,25 @@ Website: http://www.allphptricks.com/
         //x.innerHTML = "Latitude: " + position.coords.latitude + 
         //"<br>Longitude: " + position.coords.longitude;
         //post the latitudes and longitude
-        //var position.coords.latitude
-        //var position.coodrs.longitude
+        var lat = position.coords.latitude
+        var long = position.coodrs.longitude
+        var username = "<?php echo $username ?>";
+        var HttpClient = function() {
+          this.get = function(aUrl, aCallback) {
+              var anHttpRequest = new XMLHttpRequest();
+              anHttpRequest.onreadystatechange = function() {
+                  if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                      aCallback(anHttpRequest.responseText);
+              };
+              anHttpRequest.open( "GET", aUrl, true );
+              anHttpRequest.send( null );
+          };
+        };
+        var client = new HttpClient();
+        client.get("http://127.0.0.1:5000/update?username=" + username + "&long=" + long + "&lat=" +lat , function(response){
+            //do nothing
+        });
+
     }
 </script>
 </body>

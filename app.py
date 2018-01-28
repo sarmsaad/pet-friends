@@ -103,11 +103,35 @@ def saveJournal():
         elif score < 0.2 and score >= -0.4 and magnitude >= 2:
             category = 3
 
+
+        #get their long and lat and give suggestions.
+        long = var["longitude"]
+        lat = var["latitude"]
+
         posts.update_one(var, {
-            "$set": {"score": arr_score, "magnitude": arr_magnitude, "today":arr_today, "function": category }})
+            "$set": {"score": arr_score, "magnitude": arr_magnitude, "today":arr_today, "function": category, "yoga": str(ssearch("yoga", lat, long)), "therapy": str(ssearch("therapy", lat, long)), "gym": str(ssearch("gym", lat, long)), "meditation": str(ssearch("meditation", lat, long)), "massage": str(ssearch("message", lat, long))}})
         return jsonify({'reading': 'successful'})
     elif r.status_code == 429:
         return jsonify({'reading': 'bad'})
+
+@app.route('/show', methods=['GET'])
+def showData():
+    username = request.args.get("username")
+    print(username)
+    var = posts.find_one({"username": username})
+    print(var)
+    return str(var)
+
+@app.route('/update', methods=['GET'])
+def updateLongLat():
+    username = request.args.get("username")
+    long = request.args.get("longitude")
+    lat = request.args.get("latitude")
+    var = posts.find_one({"username": username})
+    posts.update_one(var, {
+        "$set": {'long': long, 'lat': lat}})
+    return jsonify({'updated': 'yes'})
+
 
 def authenticate(username, password):
     #the function to authenticate the login
@@ -126,8 +150,6 @@ def storedata(request):
     #the function that's going to store the new patient
     username = request.args.get("username")
     password = request.args.get("password")
-    long = request.args.get("longitude")
-    lat = request.args.get("latitude")
     var = posts.find_one({"username": username})
     ##we create a new person once something is new
     if var == None:

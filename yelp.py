@@ -12,7 +12,7 @@ SEARCH_PATH = '/v3/businesses/search'
 BUSINESS_PATH = '/v3/businesses/'  # Business ID will come after slash.
 TOKEN_PATH = '/oauth2/token'
 GRANT_TYPE = 'client_credentials'
-SEARCH_LIMIT = 3
+SEARCH_LIMIT = 1
 
 
 def search(bearer_token, term, lat, long):
@@ -92,13 +92,13 @@ def ssearch(query, lat, long):
     bearer_token = obtain_bearer_token(API_HOST, TOKEN_PATH)
     response = search(bearer_token, query, lat, long)
     resps = ""
-    for i, place in enumerate(response['businesses']):
-        name = place['name']
-        #price = place['price']
-        address = ", ".join(place['location']['display_address'])
-        rating = place['rating']
-        phone = place['phone']
-        resps = resps + "{}: {} ({}) \n{}, \n{}".format(i+1, name, rating, address, phone) + "\n"
+    place = response['businesses'][0]
+    name = place['name']
+    #price = place['price']
+    address = ", ".join(place['location']['display_address'])
+    rating = place['rating']
+    phone = place['phone']
+    resps = resps + "{} ({}) \n{}, \n{}".format(name, rating, address, phone) + "\n"
     return resps
 
 r = ssearch("yoga", "51.509865", "-0.118092")
