@@ -41,13 +41,13 @@ Website: http://www.allphptricks.com/
         $url = 'http://127.0.0.1:5000/signup?username=' . $username . '&password=' . $password . '&location=' . $email;
         $json = @file_get_contents($url);
         $obj = json_decode($json);
-        $bool = $obj->{'signup'};
+        //$bool = $obj->{'signup'};
 
 		$trn_date = date("Y-m-d H:i:s");
         $query = "INSERT into `users` (username, password, email, trn_date) VALUES ('$username', '".md5($password)."', '$email', '$trn_date')";
 
         if($bool = "successful"){
-            echo "<div class='form'><h3>You are registered successfully.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
+            echo "<canvas id='homebg'> </canvas><div class='jumbotron' id = 'hero'><h1>You are registered successfully.</h1><br/>Click here to <a href='login.php'>Login</a></div>";
         }
     }else{
 ?>
