@@ -66,7 +66,7 @@
           <label for="message-text" class="form-control-label">Your thoughts:</label>
           <textarea class="form-control" id="message-text" name = "writing" onkeyup="formChanged()" onchange="formChanged()"></textarea>
           </div>
-          <label for="date">Signature</label>
+          <label for="date">Signature (username)</label>
             <input type="text" class="form-control" name="user" onkeyup="formChanged()" onchange="formChanged()">
     </form>
     <div id  = "fromm">
