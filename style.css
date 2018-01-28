@@ -8,9 +8,11 @@ Website: http://www.allphptricks.com/
 }
 
 #reg{
-	padding-left: 20px;
-	padding-top: 20px;
 	float: left;
+}
+
+#journal{
+	width:25%;
 }
 
 #dog{
@@ -26,8 +28,25 @@ Website: http://www.allphptricks.com/
 
 }
 
+button {
+    display: inline-block;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+    width: 104px;
+}
+
+#close-image img {
+    display: block;
+    height: 30px;  
+    width: 100px;
+}
+
+
 #regg{
  margin-left: 0px;
+
 }
 
 #hero{
@@ -42,6 +61,7 @@ Website: http://www.allphptricks.com/
 
 h1{
 	font-family: 'Indie Flower', cursive,bold;
+	text-align: center;
 }
 
 #hero h4{

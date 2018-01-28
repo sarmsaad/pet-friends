@@ -71,7 +71,11 @@ Website: http://www.allphptricks.com/
 		<input type="password" name="password" placeholder="Password" required />
         </div>
         <div class = "row">
-        <input type="location" name="location" placeholder="location" required />
+        <input type="Enter location" name="location" placeholder="location" required /> <p> or</p>
+
+        <button class  = "btn btn-secondary" onclick="getLocation()">Get Location</button>
+
+        <p id="demo"></p>
         </div>
 		<input class = 'btn btn-primary' type="submit" name="submit" value="Register" id = "regg"/>
 		</form>
@@ -82,5 +86,25 @@ Website: http://www.allphptricks.com/
 </div>
 </div>
 <?php } ?>
+<script type="text/javascript">
+    var x = document.getElementById("demo");
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else { 
+            x.innerHTML = "Geolocation is not supported by this browser.";
+            //if not supported give an input form
+        }
+    }
+
+    function showPosition(position) {
+        //x.innerHTML = "Latitude: " + position.coords.latitude + 
+        //"<br>Longitude: " + position.coords.longitude;
+        //post the latitudes and longitude
+        //var position.coords.latitude
+        //var position.coodrs.longitude
+    }
+</script>
 </body>
 </html>

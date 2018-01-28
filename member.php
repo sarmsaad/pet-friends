@@ -36,73 +36,43 @@
     </ul>
   </div>
 </nav>
-<div class="form">
-<h1>Welcome Back!</h1>
 
-<canvas id='canvas'></canvas><br />
-  <!--<button onclick='moveLeft()'>Left</button>
-  <button onclick='moveRight()'>Right</button>-->
-<button onclick='eatMode()'>Feed</button>
-
-<p>Click the button to get your coordinates.</p>
-
-<button onclick="getLocation()">Try It</button>
-
-<p id="demo"></p>
-
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#journal" data-whatever="@getbootstrap">My Journal</button>
-
-<div class="modal fade modal-lg" id="journal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Journal Entry</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-             <label for="date">Today's Date</label>
-              <input type="datetime-local" class="form-control" name="date">
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="form-control-label">Your thoughts:</label>
-            <textarea class="form-control" id="message-text"></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Finished!</button>
-      </div>
-    </div>
+<div class  = "row">
+  <div class  = "col-md-2">
+    <button id="close-image" onclick='eatMode()'><img src="FeedButton.png"></button>
   </div>
+
+  <div class = "col-md-4">
+    <h1 >Welcome Back!</h1>
+    <canvas id='canvas'></canvas><br />
+    <!--<button onclick='moveLeft()'>Left</button>
+    <button onclick='moveRight()'>Right</button>-->
+  </div>
+
+
+
+  <div class  = "col-md-6">
+    <h1>My Journal</h1>
+    <form id = 'journal'>
+      <div class="form-group">
+          <label for="date">Today's Date</label>
+            <input type="datetime-local" class="form-control" name="date">
+      </div>
+      <div class="form-group">
+          <label for="message-text" class="form-control-label">Your thoughts:</label>
+          <textarea class="form-control" id="message-text"></textarea>
+          </div>
+    </form>
+    <button type="button" class="btn btn-primary">Finished!</button>
+  </div>
+</div>
+
 
 
 
 
 
 <script>
-var x = document.getElementById("demo");
-
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";
-        //if not supported give an input form
-    }
-}
-
-function showPosition(position) {
-    //x.innerHTML = "Latitude: " + position.coords.latitude + 
-    //"<br>Longitude: " + position.coords.longitude;
-    //post the latitudes and longitude
-    //var position.coords.latitude
-    //var position.coodrs.longitude
-}
-
 $('#journal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
   var recipient = button.data('whatever') // Extract info from data-* attributes
