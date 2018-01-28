@@ -72,18 +72,37 @@ def saveJournal():
         var = posts.find_one({"username": username})
         arr_score = str(var["score"]) + ',' + str(score)
         arr_magnitude = str(var["magnitude"]) + ',' + str(magnitude)
-        arr_today = str(score) + ',' + str(mangitude)
+        arr_today = str(score) + ',' + str(magnitude)
         #calculate the progress of the last 5 days and see if there's improvement
         array = arr_score.split(',')
         if len(array) > 5:
-            array = array[len(arr)-6:]
+            array = array[len(array)-6:]
             mean = np.mean(array)
             std = np.std(array)
 
+        # FIND triggering keywords such as stress, kill, imagine, drugs, alcohol, poison, hang
+        if text.find('stress'):
+            category = 2
+        danger_words = ['kill', 'drugs', 'alcohol', 'poison', 'hang', ' imagin']
+        for word in danger_words:
+            if text.find(word):
+                category = 3
+                break
 
+        # This is to analyze the sentiment analysis
+        if score >= 0.2 and (magnitude >= 0 and magnitude <= 2):
+            category = 1
+        elif score < 0.2 and score >= -0.4 and (magnitude >= 0 and magnitude <= 2):
+            category = 2
+        elif score > -0.4:
+            category = 3
+        elif score >= 0.2 and magnitude > 2:
+            category = 2
+        elif score < 0.2 and score >= -0.4 and magnitude >= 2:
+            category = 3
 
         posts.update_one(var, {
-            "$set": {"score": arr_score, "magnitude": arr_magnitude, "today":arr_today, "progress": }})
+            "$set": {"score": arr_score, "magnitude": arr_magnitude, "today":arr_today, "function": category }})
         return jsonify({'reading': 'successful'})
     elif r.status_code == 429:
         return jsonify({'reading': 'bad'})
