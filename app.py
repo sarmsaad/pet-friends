@@ -4,6 +4,8 @@ from pymongo import MongoClient
 
 import numpy as np
 
+import weather
+
 import config
 
 import requests
@@ -124,11 +126,12 @@ def storedata(request):
     #the function that's going to store the new patient
     username = request.args.get("username")
     password = request.args.get("password")
-    location = request.args.get("location")
+    long = request.args.get("longitude")
+    lat = request.args.get("latitude")
     var = posts.find_one({"username": username})
     ##we create a new person once something is new
     if var == None:
-        post = {'username': username, 'password': password, 'location': location, 'score': 0, 'magnitude': 0}
+        post = {'username': username, 'password': password, 'lat': lat, 'long': long, 'score': 0, 'magnitude': 0}
         post_id = posts.insert_one(post).inserted_id
         return True
     else:
