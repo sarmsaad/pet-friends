@@ -17,11 +17,8 @@ Website: http://www.allphptricks.com/
     // If form submitted, insert values into the database.
     if (isset($_REQUEST['username'])){
 		$username = ($_REQUEST['username']); // removes backslashes
-		$username = ($con,$username); //escapes special characters in a string
 		$email = ($_REQUEST['email']);
-		$email = ($con,$email);
 		$password = ($_REQUEST['password']);
-		$password = ($con,$password);
 
 		//send a request
         $url = 'http://127.0.0.1:5000/signup?username' . $username . '&password=' . $password . '&location=' . $email;
