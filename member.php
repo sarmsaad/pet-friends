@@ -24,7 +24,10 @@
 
 </head>
 <body>
-    
+<?php
+  $the_username = $_SESSION['username'] 
+?>
+  
   
     
 <nav class="navbar navbar-light bg-faded">
